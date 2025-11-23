@@ -1,0 +1,39 @@
+{
+  "build": {
+    "development": {
+      "channel": "dev",
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_ENV_MODE": "development",
+        "EXPO_PUBLIC_ENV_NAME": "dev",
+        "EXPO_PUBLIC_MOCK": "false",
+        "EXPO_PUBLIC_MOCK_DELAY": "500",
+        "EXPO_PUBLIC_IP_URL": "http://{your-local-IP-address}:5028",
+        "EXPO_PUBLIC_API_URL": "https://alpha-ps.com/students/api"
+      }
+    },
+    "production": {
+      "channel": "prod",
+      "env": {
+        "EXPO_PUBLIC_ENV_MODE": "production",
+        "EXPO_PUBLIC_ENV_NAME": "prod",
+        "EXPO_PUBLIC_API_URL": "https://alpha-ps.com/students/api"
+      }
+    },
+    "test": {
+      "distribution": "internal",
+      "channel": "test",
+      "environment": "preview",
+      "env": {
+        "EXPO_PUBLIC_ENV_MODE": "test",
+        "EXPO_PUBLIC_ENV_NAME": "test",
+        "EXPO_PUBLIC_API_URL": "https://alpha-ps.com/students/api"
+      }
+    }
+  },
+  "cli": {
+    "version": ">= 10.0.0",
+    "appVersionSource": "local"
+  }
+}

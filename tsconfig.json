@@ -1,6 +1,43 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "baseUrl": "./",
+    "paths": {
+      "api/*": ["src/api"],
+      "/assets/*": ["src/assets/*"],
+      "shared/components/*": ["src/shared/components"],
+      "shared/modals/*": ["src/shared/modals"],
+      "shared/models/*": ["src/shared/models"],
+      "shared/services/*": ["src/shared/services"],
+      "shared/utils/*": ["src/shared/utils"],
+      "shared/store/*": ["src/shared/store"],
+      "pages/*": ["src/pages"],
+      "navigation/*": ["src/navigation"],
+      "/theme/*": ["src/theme/theme"]
+    },
+    "typeRoots": ["./node_modules/@types", "./@types"],
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "module": "ESNext",
+    "target": "ES2021",
+    "jsx": "react-native"
+  },
+  "exclude": ["node_modules", "build"],
+  "include": [
+    "src",
+    "scripts",
+    "api",
+    "assets",
+    "pages",
+    "shared",
+    "theme",
+    "navigation",
+    "scripts",
+    "App*.tsx",
+    "index.ts",
+    "@types",
+    "app.config.ts"
+  ]
 }
