@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "expo start",
+    "start": "node --loader ts-node/esm scripts/start-with-profile.mts development",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eas:build": "eas build --clear-cache",

@@ -1,0 +1,138 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 0h552v108h-552z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="m0 0h552v108h-552z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp3">
+			<path d="m0 0h552v108h-552z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp4">
+			<path d="m0 0h552v108h-552z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp5">
+			<path d="m0 0h552v108h-552z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp6">
+			<path d="m0 0h552v108h-552z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp7">
+			<path d="m0 0h552v108h-552z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp8">
+			<path d="m0 0h552v108h-552z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp9">
+			<path d="m0 0h552v108h-552z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: #e2e2e2 }
+		.s1 { fill: #e8431f }
+	</style>
+	<g id="g5609">
+		<g id="g5611">
+			<g id="g5753">
+				<g id="g5755">
+					<g id="Clip-Path: g5757" clip-path="url(#cp1)">
+						<g id="g5757">
+							<g id="g5763">
+								<path id="path5765" class="s0" d="m84.86 67.28c-3.38 0-6.11-2.74-6.11-6.11 0-3.38 2.73-6.12 6.11-6.12 3.37 0 6.11 2.74 6.11 6.12 0 3.37-2.74 6.11-6.11 6.11z"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="g5767">
+				<g id="g5769">
+					<g id="Clip-Path: g5771" clip-path="url(#cp2)">
+						<g id="g5771">
+							<g id="g5777">
+								<path id="path5779" class="s0" d="m36.71 97.48c0-5.48 4.44-9.92 9.92-9.92 5.48 0 9.92 4.44 9.92 9.92 0 5.48-4.44 9.92-9.92 9.92-5.48 0-9.92-4.44-9.92-9.92z"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="g5781">
+				<g id="g5783">
+					<g id="Clip-Path: g5785" clip-path="url(#cp3)">
+						<g id="g5785">
+							<g id="g5791">
+								<path id="path5793" class="s0" d="m9.92 49.71c5.48 0 9.92 4.44 9.92 9.92 0 5.48-4.44 9.92-9.92 9.92-5.48 0-9.92-4.44-9.92-9.92 0-5.48 4.44-9.92 9.92-9.92z"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="g5795">
+				<g id="g5797">
+					<g id="Clip-Path: g5799" clip-path="url(#cp4)">
+						<g id="g5799">
+							<g id="g5805">
+								<path id="path5807" class="s0" d="m52.5 22.23c0 3.52-2.85 6.36-6.36 6.36-3.51 0-6.36-2.84-6.36-6.36 0-3.51 2.85-6.36 6.36-6.36 3.51 0 6.36 2.85 6.36 6.36z"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="g5809">
+				<g id="g5811">
+					<g id="Clip-Path: g5813" clip-path="url(#cp5)">
+						<g id="g5813">
+							<g id="g5819">
+								<path id="path5821" class="s0" d="m79.52 33.19c0 3.09-2.5 5.6-5.6 5.6-3.09 0-5.59-2.51-5.59-5.6 0-3.09 2.5-5.6 5.59-5.6 3.1 0 5.6 2.51 5.6 5.6z"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="g5823">
+				<g id="g5825">
+					<g id="Clip-Path: g5827" clip-path="url(#cp6)">
+						<g id="g5827">
+							<g id="g5833">
+								<path id="path5835" class="s0" d="m27.35 34.38c0 4.46-3.61 8.07-8.07 8.07-4.46 0-8.08-3.61-8.08-8.07 0-4.46 3.62-8.07 8.08-8.07 4.46 0 8.07 3.61 8.07 8.07z"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="g5837">
+				<g id="g5839">
+					<g id="Clip-Path: g5841" clip-path="url(#cp7)">
+						<g id="g5841">
+							<g id="g5847">
+								<path id="path5849" class="s0" d="m31.06 86.36c0 5.83-4.72 10.56-10.55 10.56-5.83 0-10.55-4.73-10.55-10.56 0-5.82 4.72-10.55 10.55-10.55 5.83 0 10.55 4.73 10.55 10.55z"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="g5851">
+				<g id="g5853">
+					<g id="Clip-Path: g5855" clip-path="url(#cp8)">
+						<g id="g5855">
+							<g id="g5861">
+								<path id="path5863" class="s0" d="m80.43 87.88c0 4.46-3.61 8.08-8.07 8.08-4.46 0-8.07-3.62-8.07-8.08 0-4.46 3.61-8.07 8.07-8.07 4.46 0 8.07 3.61 8.07 8.07z"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="g5865">
+				<g id="g5867">
+					<g id="Clip-Path: g5869" clip-path="url(#cp9)">
+						<g id="g5869">
+							<g id="g5875">
+								<path id="path5877" class="s1" d="m108.68 20.32l11.26-4.19-11-4.09-4.48-12.04-4.36 11.73-11.81 4.4 12.07 4.49 4.1 11.04z"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
