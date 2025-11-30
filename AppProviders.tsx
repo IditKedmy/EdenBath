@@ -1,6 +1,5 @@
 import {ReactNode, useEffect, useState} from 'react';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
-import {NavigationContainer} from '@react-navigation/native';
 import {PaperProvider} from 'react-native-paper';
 import {StatusBar} from 'expo-status-bar';
 import {Loader, Popup, Snackbar} from 'shared/modals';
@@ -44,7 +43,7 @@ export function AppProviders({children}: Props) {
             icon: props => <MaterialCommunityIcons {...props} />,
           }}
         >
-          <NavigationContainer>{children}</NavigationContainer>
+          {children}
           <Popup />
           <Loader />
           <Snackbar />

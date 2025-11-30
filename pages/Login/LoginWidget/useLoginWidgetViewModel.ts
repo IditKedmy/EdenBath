@@ -3,11 +3,10 @@ import {loginUseCase} from './viewModel/useCases/loginUseCase';
 import {wrapProcess} from 'shared/utils';
 import {LoginSubmitRequest} from './viewModel/models';
 import {validateOtpUseCase} from './viewModel/useCases/validateOtpUseCase';
-import {NavigationProp, useNavigation} from '@react-navigation/native';
-import {StackParamList} from 'navigation';
+import {useRouter} from 'expo-router';
 
 export function useLoginWidgetViewModel() {
-  const navigation = useNavigation<NavigationProp<StackParamList>>();
+  const router = useRouter();
   const [loginRequested, setLoginRequested] = useState(false);
   const loginRequestRef = useRef<LoginSubmitRequest | undefined>(undefined);
 
@@ -23,17 +22,14 @@ export function useLoginWidgetViewModel() {
   async function handleOtpSubmit(otp: string) {
     if (!loginRequestRef.current) return;
     const act = async () => {
-      await validateOtpUseCase(
-        {
-          nationalId: loginRequestRef.current!.nationalId || '',
-          phone: loginRequestRef.current!.phone || '',
-          otp,
-          password: null,
-        },
-        navigation,
-      );
+      await validateOtpUseCase({
+        nationalId: loginRequestRef.current!.nationalId || '',
+        phone: loginRequestRef.current!.phone || '',
+        otp,
+        password: null,
+      });
 
-      navigation.navigate('Home');
+      router.replace('/home');
       setLoginRequested(false);
     };
     await wrapProcess(act);

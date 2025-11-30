@@ -1,12 +1,14 @@
 {
   "expo": {
-    "name": "celebrite-ui",
-    "slug": "celebrite-ui",
+    "name": "cellebrite-ui",
+    "slug": "cellebrite-ui",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "entryPoint": "expo-router/entry",
+    "scheme": "cellebrite-ui",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -25,7 +27,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-secure-store", "expo-localization", "expo-font", "expo-asset"],
+    "plugins": ["expo-secure-store", "expo-localization", "expo-font", "expo-asset", "expo-router"],
     "owner": "iditkedmy"
   }
 }

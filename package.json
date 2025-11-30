@@ -1,7 +1,7 @@
 {
   "name": "celebrite-ui",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "scripts": {
     "start": "node --loader ts-node/esm scripts/start-with-profile.mts development",
     "android": "expo start --android",
@@ -13,26 +13,27 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
-    "@react-navigation/native": "^7.1.20",
-    "@react-navigation/stack": "^7.6.7",
     "expo": "~54.0.25",
     "expo-asset": "~12.0.10",
     "expo-constants": "~18.0.10",
     "expo-file-system": "~19.0.19",
+    "expo-linking": "~8.0.9",
     "expo-localization": "~17.0.7",
+    "expo-router": "~6.0.15",
     "expo-secure-store": "~15.0.7",
     "expo-sharing": "~14.0.7",
     "expo-status-bar": "~3.0.8",
     "formik": "^2.4.9",
     "libphonenumber-js": "^1.12.29",
     "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-native": "0.81.5",
     "react-native-gesture-handler": "~2.28.0",
     "react-native-paper": "^5.14.5",
     "react-native-safe-area-context": "~5.6.0",
     "react-native-screens": "~4.16.0",
     "yup": "^1.7.1",
-    "zustand": "^5.0.8"
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@types/react": "~19.1.0",

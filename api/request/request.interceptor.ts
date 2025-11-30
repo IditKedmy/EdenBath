@@ -1,5 +1,5 @@
 import {getCurrentUserFromSecureStore} from 'shared/services';
-import {refreshUseCase} from 'pages';
+import {refreshUseCase} from 'pages/Login/LoginWidget/viewModel/useCases/refreshUseCase';
 import {isTokenExpired} from './isTokenExpired';
 
 function isLoginRequest(request: Request) {
