@@ -5,4 +5,3 @@ export default function Index() {
   const user = useCurrentUserFromState();
   return <Redirect href={user ? '/home' : '/login'} />;
 }
-

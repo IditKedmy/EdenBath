@@ -27,6 +27,7 @@
     "api",
     "app",
     "AppProviders.tsx",
+    "index.ts",
     "app.config.ts",
     "assets",
     "pages",
