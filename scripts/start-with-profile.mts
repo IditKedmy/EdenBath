@@ -11,7 +11,7 @@ if (!Object.keys(envFromProfile).length) {
 }
 
 // Merge current env + profile env
-const env = { ...process.env, ...envFromProfile };
+const env = {...process.env, ...envFromProfile};
 
 // Windows-safe spawn via cmd /c (works also in UNIX)
 const isWin = process.platform === 'win32';
@@ -27,4 +27,4 @@ const child = spawn(cmd, args, {
   shell: false,
 });
 
-child.on('exit', (code) => process.exit(code ?? 0));
+child.on('exit', code => process.exit(code ?? 0));

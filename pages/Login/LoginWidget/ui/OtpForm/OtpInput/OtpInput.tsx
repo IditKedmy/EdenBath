@@ -49,11 +49,11 @@ export function OtpInput({otp, handleChange, numInputs}: OtpInputProps) {
       {inputs.map((_, index) => (
         <TextInput
           key={index}
-          ref={(ref) => {
+          ref={ref => {
             inputRefs.current[index] = ref;
           }}
           value={otp[index] || ''}
-          onChangeText={(text) => handleInputChange(text, index)}
+          onChangeText={text => handleInputChange(text, index)}
           onKeyPress={({nativeEvent}) => handleKeyPress(nativeEvent.key, index)}
           keyboardType="number-pad"
           maxLength={1}

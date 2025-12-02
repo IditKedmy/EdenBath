@@ -19,7 +19,7 @@ export async function delayOnMock(signal: AbortSignal | undefined) {
   signal?.addEventListener('abort', () => {
     clearTimeout(timeoutRef.current);
   });
-  await new Promise((resolve) => {
+  await new Promise(resolve => {
     timeoutRef.current = setTimeout(resolve, delay);
   });
 }

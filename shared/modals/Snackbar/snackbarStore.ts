@@ -10,12 +10,12 @@ type SnackbarStore = {
   close: () => void;
 };
 
-export const snackbarStore = create<SnackbarStore>((set) => ({
+export const snackbarStore = create<SnackbarStore>(set => ({
   key: 0,
   message: null,
   severity: 'info',
   isOpen: false,
   open: (message: string, severity: SeverityTypes) =>
-    set((prevState) => ({...prevState, message, severity, isOpen: true, key: prevState.key + 1})),
-  close: () => set((prevState) => ({...prevState, isOpen: false, message: null})),
+    set(prevState => ({...prevState, message, severity, isOpen: true, key: prevState.key + 1})),
+  close: () => set(prevState => ({...prevState, isOpen: false, message: null})),
 }));

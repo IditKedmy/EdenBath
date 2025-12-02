@@ -4,5 +4,5 @@ export {Snackbar} from './Snackbar';
 export const openSnackbar = snackbarStore.getState().open;
 
 export function useSnackbarMessage(): string | null {
-  return snackbarStore((state) => state.message);
+  return snackbarStore(state => state.message);
 }

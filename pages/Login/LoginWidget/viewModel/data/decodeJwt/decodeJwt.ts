@@ -37,7 +37,7 @@ const parseJwt = (token: string) => {
     window
       .atob(base64)
       .split('')
-      .map((c) => `%${c.charCodeAt(0).toString(16)}`)
+      .map(c => `%${c.charCodeAt(0).toString(16)}`)
       .join(''),
   );
   const res = JSON.parse(jsonPayload);
