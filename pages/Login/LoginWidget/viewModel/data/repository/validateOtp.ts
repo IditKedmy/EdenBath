@@ -45,10 +45,7 @@ export async function validateOtp(
 ): Promise<TokensResponseDto | undefined | null> {
   // Read from JSON file instead of API call
   const user = usersData.users.find(
-    (u) =>
-      u.nationalId === request.nationalId &&
-      u.phone === request.phone &&
-      u.otp === request.otp,
+    u => u.nationalId === request.nationalId && u.phone === request.phone && u.otp === request.otp,
   );
 
   if (!user) {
@@ -56,7 +53,7 @@ export async function validateOtp(
   }
 
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise(resolve => setTimeout(resolve, 500));
 
   // Generate mock tokens
   const accessTokenPayload = {
