@@ -1,7 +1,8 @@
 import {Redirect} from 'expo-router';
-import {useCurrentUserFromState} from 'shared/services';
+// import {useCurrentUserFromState} from 'shared/services';
 
 export default function Index() {
-  const user = useCurrentUserFromState();
-  return <Redirect href={user ? '/home' : '/login'} />;
+  // const user = useCurrentUserFromState();
+  return <Redirect href="/home" />;
+  // return <Redirect href={user ? '/home' : '/login'} />;
 }

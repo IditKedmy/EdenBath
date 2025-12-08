@@ -7,6 +7,7 @@ import {theme} from 'theme/theme';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {hideLoader, showLoader} from 'shared/modals';
 import {initializeCurrentUser} from 'shared/services';
+import './assets/i18n'; // Initialize i18n
 
 type Props = {
   children: ReactNode;
