@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "cellebrite-ui",
-    "slug": "cellebrite-ui",
+    "name": "eden-bath-ui",
+    "slug": "eden-bath-ui",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "entryPoint": "expo-router/entry",
-    "scheme": "cellebrite-ui",
+    "scheme": "eden-bath-ui",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -25,7 +25,7 @@
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "plugins": ["expo-secure-store", "expo-localization", "expo-font", "expo-asset", "expo-router"],
     "owner": "iditkedmy"
