@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, ScrollView, Image, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, ScrollView, TouchableOpacity, ImageBackground} from 'react-native';
 import {Text} from 'react-native-paper';
 import {useTranslation} from 'react-i18next';
 import {useRouter} from 'expo-router';
@@ -7,26 +7,38 @@ import {Header, Footer, WhatsAppButton} from 'shared/components/*';
 import {useDirection} from 'shared/utils/useDirection';
 import {colors, spacing, typography} from '../theme';
 
+// Hero background image from Figma
+const heroBackgroundImage =
+  'https://www.figma.com/api/mcp/asset/81e5a4e6-6138-40c9-b103-b6643f165ab9';
+
+// Category images from Figma
+const categoryImages = {
+  legs: 'https://www.figma.com/api/mcp/asset/821cca83-c0cb-491a-b70e-842e203b6d62',
+  'wall-mounted': 'https://www.figma.com/api/mcp/asset/3513b422-1179-43bd-9aae-a52aa7503288',
+  'natural-wood': 'https://www.figma.com/api/mcp/asset/ba3342dc-1ca5-465c-bba8-10a3b03ed461',
+  sinks: 'https://www.figma.com/api/mcp/asset/9a62d088-74b5-42a4-99d7-845bd5b07f95',
+};
+
 const categories = [
   {
     id: 'legs',
     name: 'categoryLegs',
-    image: 'https://via.placeholder.com/300x200?text=Vanities+on+Legs',
+    image: categoryImages.legs,
   },
   {
     id: 'wall-mounted',
     name: 'categoryWallMounted',
-    image: 'https://via.placeholder.com/300x200?text=Wall+Mounted',
+    image: categoryImages['wall-mounted'],
   },
   {
     id: 'natural-wood',
     name: 'categoryNaturalWood',
-    image: 'https://via.placeholder.com/300x200?text=Natural+Wood',
+    image: categoryImages['natural-wood'],
   },
   {
     id: 'sinks',
     name: 'categorySinks',
-    image: 'https://via.placeholder.com/300x200?text=Sinks',
+    image: categoryImages.sinks,
   },
 ];
 
@@ -44,12 +56,17 @@ export default function HomeScreen() {
       <Header title={t('homeTitle')} isHome />
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         {/* Hero Section */}
-        <View style={styles.heroSection}>
+        <ImageBackground
+          source={{uri: heroBackgroundImage}}
+          style={styles.heroSection}
+          imageStyle={styles.heroBackgroundImage}
+        >
+          <View style={styles.heroOverlay} />
           <View style={styles.heroContent}>
             <Text style={[styles.heroTitle, {textAlign}]}>{t('heroTitle')}</Text>
             <Text style={[styles.heroSubtitle, {textAlign}]}>{t('heroSubtitle')}</Text>
           </View>
-        </View>
+        </ImageBackground>
 
         {/* Popular Categories */}
         <View style={styles.section}>
@@ -60,9 +77,20 @@ export default function HomeScreen() {
                 key={category.id}
                 style={[styles.categoryCard, isMobile ? styles.mobileCard : styles.webCard]}
                 onPress={() => handleCategoryPress(category.id)}
+                activeOpacity={0.9}
               >
-                <Image source={{uri: category.image}} style={styles.categoryImage} />
-                <Text style={styles.categoryName}>{t(category.name)}</Text>
+                <ImageBackground
+                  source={{uri: category.image}}
+                  style={styles.categoryImage}
+                  imageStyle={styles.categoryImageStyle}
+                >
+                  <View style={styles.categoryGradientOverlay}>
+                    <View style={styles.categoryGradientLayer} />
+                    <View style={styles.categoryTextContainer}>
+                      <Text style={styles.categoryName}>{t(category.name)}</Text>
+                    </View>
+                  </View>
+                </ImageBackground>
               </TouchableOpacity>
             ))}
           </View>
@@ -84,25 +112,43 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   heroSection: {
-    backgroundColor: colors.primary,
-    paddingVertical: spacing.xl,
+    minHeight: 400,
+    paddingVertical: spacing.xl * 2,
     paddingHorizontal: spacing.md,
     marginBottom: spacing.lg,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  },
+  heroBackgroundImage: {
+    resizeMode: 'cover',
+  },
+  heroOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(43, 52, 64, 0.5)', // colors.primary with 50% opacity
   },
   heroContent: {
     maxWidth: 800,
     alignSelf: 'center',
     width: '100%',
+    zIndex: 1,
+    paddingHorizontal: spacing.md,
   },
   heroTitle: {
-    ...typography.h1,
+    fontSize: 40,
+    fontWeight: '700',
+    lineHeight: 60,
     color: colors.surface,
     marginBottom: spacing.sm,
+    textAlign: 'center',
   },
   heroSubtitle: {
-    ...typography.body,
+    fontSize: 24,
+    fontWeight: '400',
+    lineHeight: 36,
     color: colors.surface,
     opacity: 0.9,
+    textAlign: 'center',
   },
   section: {
     paddingHorizontal: spacing.md,
@@ -110,11 +156,14 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     ...typography.h2,
+    fontSize: 24,
+    fontWeight: '400',
+    lineHeight: 36,
     color: colors.textPrimary,
-    marginBottom: spacing.md,
+    marginBottom: spacing.lg,
   },
   categoriesGrid: {
-    gap: spacing.md,
+    gap: spacing.lg,
   },
   mobileGrid: {
     flexDirection: 'column',
@@ -125,32 +174,58 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   categoryCard: {
-    backgroundColor: colors.surface,
     borderRadius: 16,
     overflow: 'hidden',
-    elevation: 2,
+    elevation: 4,
     shadowColor: colors.black,
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    shadowOffset: {width: 0, height: 4},
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
   },
   mobileCard: {
     width: '100%',
+    height: 256,
   },
   webCard: {
     minWidth: 200,
     flex: 1,
     maxWidth: 300,
+    height: 256,
   },
   categoryImage: {
     width: '100%',
-    aspectRatio: 3 / 2,
+    height: '100%',
+    justifyContent: 'flex-end',
+  },
+  categoryImageStyle: {
     resizeMode: 'cover',
   },
+  categoryGradientOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'flex-end',
+  },
+  categoryGradientLayer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 100,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  },
+  categoryTextContainer: {
+    paddingBottom: spacing.md,
+    paddingHorizontal: spacing.md,
+    zIndex: 1,
+  },
   categoryName: {
-    ...typography.h3,
-    color: colors.textPrimary,
-    padding: spacing.md,
+    fontSize: 20,
+    fontWeight: '400',
+    lineHeight: 30,
+    color: colors.surface,
     textAlign: 'center',
+    // Add text shadow for better readability
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: {width: 0, height: 1},
+    textShadowRadius: 3,
   },
 });
