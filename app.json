@@ -7,7 +7,6 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "entryPoint": "expo-router/entry",
     "scheme": "eden-bath-ui",
     "splash": {
       "image": "./assets/splash-icon.png",
@@ -28,6 +27,6 @@
       "favicon": "./assets/icon.png"
     },
     "plugins": ["expo-secure-store", "expo-localization", "expo-font", "expo-asset", "expo-router"],
-    "owner": "iditkedmy"
+    "owner": "IditKedmy"
   }
 }

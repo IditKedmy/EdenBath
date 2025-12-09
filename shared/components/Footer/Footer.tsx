@@ -12,7 +12,7 @@ import EdenBathLogo from 'assets/images/EdenBathLogo.png';
 export const Footer: React.FC = () => {
   const {t} = useTranslation();
   const router = useRouter();
-  const {isMobile, flexDirection, textAlign} = useDirection();
+  const {isMobile, flexDirection, textAlign, direction} = useDirection();
 
   const handlePhone = () => {
     Linking.openURL('tel:+972502303303');
@@ -27,50 +27,52 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <View style={[styles.footer, {flexDirection: isMobile ? 'column' : flexDirection}]}>
-      {/* Brand / About Section */}
-      <View style={[styles.section, isMobile && styles.mobileSection]}>
-        <Image
-          source={EdenBathLogo}
-          style={[styles.footerLogo, {tintColor: colors.accent}]}
-          resizeMode="contain"
-        />
-        <Text style={[styles.brandText, {textAlign}]}>{t('brandDescription')}</Text>
-      </View>
+    <View style={styles.container}>
+      <View style={{flexDirection: isMobile ? 'column' : flexDirection}}>
+        {/* Brand / About Section */}
+        <View style={[styles.section, isMobile && styles.mobileSection]}>
+          <Image
+            source={EdenBathLogo}
+            style={[styles.footerLogo, {tintColor: colors.accent}]}
+            resizeMode="contain"
+          />
+          <Text style={[styles.brandText, {textAlign, direction}]}>{t('brandDescription')}</Text>
+        </View>
 
-      {/* Quick Navigation */}
-      <View style={[styles.section, isMobile && styles.mobileSection]}>
-        <Text style={[styles.sectionTitle, {textAlign, color: colors.accent}]}>
-          {t('quickLinks')}
-        </Text>
-        <TouchableOpacity onPress={() => router.push('/home')}>
-          <Text style={[styles.link, {textAlign}]}>{t('home')}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => router.push('/catalog')}>
-          <Text style={[styles.link, {textAlign}]}>{t('catalog')}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => router.push('/favorites')}>
-          <Text style={[styles.link, {textAlign}]}>{t('favorites')}</Text>
-        </TouchableOpacity>
-      </View>
+        {/* Quick Navigation */}
+        <View style={[styles.section, isMobile && styles.mobileSection]}>
+          <Text style={[styles.sectionTitle, {textAlign, color: colors.accent}]}>
+            {t('quickLinks')}
+          </Text>
+          <TouchableOpacity onPress={() => router.push('/home')}>
+            <Text style={[styles.link, {textAlign}]}>{t('home')}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/catalog')}>
+            <Text style={[styles.link, {textAlign}]}>{t('catalog')}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/favorites')}>
+            <Text style={[styles.link, {textAlign}]}>{t('favorites')}</Text>
+          </TouchableOpacity>
+        </View>
 
-      {/* Contact */}
-      <View style={[styles.section, isMobile && styles.mobileSection]}>
-        <Text style={[styles.sectionTitle, {textAlign, color: colors.accent}]}>
-          {t('contactUs')}
-        </Text>
-        <TouchableOpacity style={[styles.contactRow, {flexDirection}]} onPress={handlePhone}>
-          <MaterialCommunityIcons name="phone" size={20} color={colors.surface} />
-          <Text style={[styles.contactText, {textAlign}]}>050-230-3303</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.contactRow, {flexDirection}]} onPress={handleEmail}>
-          <MaterialCommunityIcons name="email" size={20} color={colors.surface} />
-          <Text style={[styles.contactText, {textAlign}]}>edenbath1@gmail.com</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.contactRow, {flexDirection}]} onPress={handleFacebook}>
-          <MaterialCommunityIcons name="facebook" size={20} color={colors.surface} />
-          <Text style={[styles.contactText, {textAlign}]}>Facebook</Text>
-        </TouchableOpacity>
+        {/* Contact */}
+        <View style={[styles.section, isMobile && styles.mobileSection]}>
+          <Text style={[styles.sectionTitle, {textAlign, color: colors.accent}]}>
+            {t('contactUs')}
+          </Text>
+          <TouchableOpacity style={[styles.contactRow, {flexDirection}]} onPress={handlePhone}>
+            <MaterialCommunityIcons name="phone" size={20} color={colors.surface} />
+            <Text style={[styles.contactText, {textAlign}]}>050-230-3303</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.contactRow, {flexDirection}]} onPress={handleEmail}>
+            <MaterialCommunityIcons name="email" size={20} color={colors.surface} />
+            <Text style={[styles.contactText, {textAlign}]}>edenbath1@gmail.com</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.contactRow, {flexDirection}]} onPress={handleFacebook}>
+            <MaterialCommunityIcons name="facebook" size={20} color={colors.surface} />
+            <Text style={[styles.contactText, {textAlign}]}>Facebook</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Copyright */}
@@ -83,23 +85,24 @@ export const Footer: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  footer: {
+  container: {
+    flexDirection: 'column',
     backgroundColor: colors.primary,
     paddingVertical: spacing.lg,
     paddingHorizontal: spacing.md,
+    justifyContent: 'space-between',
   },
   section: {
     flex: 1,
     marginBottom: spacing.md,
+    width: '90%',
   },
   mobileSection: {
-    alignItems: 'center',
     marginBottom: spacing.lg,
   },
   footerLogo: {
-    width: 40,
-    height: 40,
-    marginBottom: spacing.md,
+    width: 'auto',
+    height: 60,
   },
   sectionTitle: {
     ...typography.h3,
@@ -109,6 +112,7 @@ const styles = StyleSheet.create({
     ...typography.bodySmall,
     color: colors.surface,
     lineHeight: 20,
+    width: '90%',
   },
   link: {
     ...typography.bodySmall,
@@ -138,5 +142,6 @@ const styles = StyleSheet.create({
   copyright: {
     ...typography.caption,
     color: colors.surface,
+    alignSelf: 'center',
   },
 });
